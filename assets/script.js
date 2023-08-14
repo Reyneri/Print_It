@@ -47,3 +47,5 @@ leftArrow.addEventListener ("click", function() {
 	bannerImage.setAttribute("src", "./assets/images/slideshow/"+ slides [slideNumber].image);
 tagLine.innerHTML = slides[slideNumber].tagLine ;	
 });
+
+
