@@ -22,7 +22,7 @@ Technologies utilisées
     DOM (Document Object Model) : Utilisé pour sélectionner, modifier et manipuler des éléments HTML à partir de JavaScript.
     Event Listeners : Utilisé pour écouter et réagir à des événements, comme un clic sur une flèche.
     Tableaux en JavaScript : Utilisé pour stocker les images et les textes du carrousel.
-    Instructions conditionnelles : Utilisé pour gérer la logique du défilement infini.
+    Structure "if" : Utilisé pour gérer la logique du défilement infini.
 
 ***🚀 Voir le projet en direct***
 
