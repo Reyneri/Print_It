@@ -5,6 +5,16 @@ const leftArrow = document.querySelector(".arrow_left")
 const bannerImage = document.querySelector(".banner-img")
 const tagLine = document.querySelector(".tagline")
 
+const dots = document.querySelectorAll(".dot")
+console.log(dots[0])
+let slideNumber
+
+function init() {
+	bannerImage.setAttribute("src", "./assets/images/slideshow/" + slides[0].image)
+	tagLine.innerHTML = slides[0].tagLine
+	slideNumber = 0
+	dots[0].classList.add("dot_selected")
+}
 const slides = [
 	{
 		"image": "slide1.jpg",
@@ -23,33 +33,43 @@ const slides = [
 		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-bannerImage.setAttribute("src", "./assets/images/slideshow/" + slides[0].image)
-tagLine.innerHTML = slides[0].tagLine
-let slideNumber = 0
 
 
+
+init()
 
 rightArrow.addEventListener("click", function () {
-	console.log("Bouton droit cliqué!");
+	console.log("Bouton droit cliqué! " + "Slide numéro" + slideNumber);
 	slideNumber++
-if (slideNumber>= slides.length) {
-	slideNumber = 0 ;
-}
+	if (slideNumber >= slides.length) {
+		slideNumber = 0;
+		dots[slideNumber].classList.add("dot_selected")
+		dots[slides.length - 1].classList.remove("dot_selected")
+	} else {
+		dots[slideNumber].classList.add("dot_selected")
+		dots[slideNumber - 1].classList.remove("dot_selected")
+	}
 
 	bannerImage.setAttribute("src", "./assets/images/slideshow/" + slides[slideNumber].image)
 	tagLine.innerHTML = slides[slideNumber].tagLine
 })
 
-leftArrow.addEventListener ("click", function() {
-	console.log("Bouton gauche cliqué!")
+
+leftArrow.addEventListener("click", function () {
+	console.log("Bouton gauche cliqué! " + "Slide numéro" + slideNumber  )
+	console.log("Bouton actuellement sélectionné : " + dots[slideNumber].classList);
+	dots[slideNumber].classList.remove("dot_selected"); 
 	slideNumber--;
-	if (slideNumber < 0 ) {
-		slideNumber = slides.length -1 ;
-
+	if (slideNumber < 0) {
+		slideNumber = slides.length - 1;
 	}
+dots [ slideNumber].classList.add("dot_selected");
 
-	bannerImage.setAttribute("src", "./assets/images/slideshow/"+ slides [slideNumber].image);
-tagLine.innerHTML = slides[slideNumber].tagLine ;	
+	bannerImage.setAttribute("src", "./assets/images/slideshow/" + slides[slideNumber].image);
+	tagLine.innerHTML = slides[slideNumber].tagLine;
+
 });
 
 
+
+ 
