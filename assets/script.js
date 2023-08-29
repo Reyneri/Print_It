@@ -39,8 +39,9 @@ const slides = [
 init()
 
 rightArrow.addEventListener("click", function () {
-	console.log("Bouton droit cliqué! " + "Slide numéro" + slideNumber);
+	console.log("Bouton droit cliqué! ");
 	slideNumber++
+	console.log("Numero de bullet point " + slideNumber)
 	if (slideNumber >= slides.length) {
 		slideNumber = 0;
 		dots[slideNumber].classList.add("dot_selected")
@@ -56,8 +57,9 @@ rightArrow.addEventListener("click", function () {
 
 
 leftArrow.addEventListener("click", function () {
-	console.log("Bouton gauche cliqué! " + "Slide numéro" + slideNumber  )
-	console.log("Bouton actuellement sélectionné : " + dots[slideNumber].classList);
+	console.log("Bouton gauche cliqué! ")
+	console.log("Bouton actuellement sélectionné n°" + slideNumber);
+
 	dots[slideNumber].classList.remove("dot_selected"); 
 	slideNumber--;
 	if (slideNumber < 0) {
